@@ -1,0 +1,54 @@
+==================
+Hello world
+==================
+
+# hello
+def main() {
+    print("Hello, RGC!")
+}
+
+---
+
+(source_file
+  (comment)
+  (function_definition
+    name: (identifier)
+    parameters: (parameters)
+    body: (block
+      (expression_statement
+        (expression
+          (call_expression
+            function: (identifier)
+            arguments: (arguments
+              (expression
+                (string)))))))))
+
+==================
+Typed function and return
+==================
+
+def add(a: int, b: int) -> int {
+    return a + b
+}
+
+---
+
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameters
+      (parameter
+        (identifier)
+        (type))
+      (parameter
+        (identifier)
+        (type)))
+    return_type: (type)
+    body: (block
+      (return_statement
+        (expression
+          (binary_expression
+            left: (expression
+              (identifier))
+            right: (expression
+              (identifier))))))))
